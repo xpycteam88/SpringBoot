@@ -9,8 +9,8 @@ public interface Calculations {
 
     Integer multiply(Integer a, Integer b);
 
-    Double divide(Integer a, Integer b);
+    Integer divide(Integer a, Integer b);
 
-    boolean thereValue(Integer a, Integer b);
+    void checkValue(Integer a, Integer b);
 
 }

@@ -22,45 +22,23 @@ public class Calculator {
     }
 
     @GetMapping(path = "/plus")
-    public String plus(@RequestParam(required = false) Integer num1, @RequestParam(required = false) Integer num2) {
-        // реализовал здесь проверку на null
-        if (calculator.thereValue(num1, num2)) {
-            return "Не введено значение!!!";
-        } else {
-            return "Сумма чисел " + num1 + " и " + num2 + " = " + calculator.plus(num1, num2);
-
-        }
+    public String plus(@RequestParam Integer num1, @RequestParam Integer num2) {
+        return "Сумма чисел " + num1 + " и " + num2 + " = " + calculator.plus(num1, num2);
     }
 
     @GetMapping(path = "/minus")
-    public String minus(@RequestParam(required = false) Integer num1, @RequestParam(required = false) Integer num2) {
-        if (calculator.thereValue(num1, num2)) {
-            return "Не введено значение!!!";
-        } else {
-            return "Вычитание чисел " + num1 + " и " + num2 + " = " + calculator.minus(num1, num2);
-        }
+    public String minus(@RequestParam Integer num1, @RequestParam Integer num2) {
+        return "Вычитание чисел " + num1 + " и " + num2 + " = " + calculator.minus(num1, num2);
     }
 
     @GetMapping(path = "/multiply")
-    public String multiply(@RequestParam(required = false) Integer num1, @RequestParam(required = false) Integer num2) {
-        if (calculator.thereValue(num1, num2)) {
-            return "Не введено значение!!!";
-        } else {
-            return "Умножение чисел " + num1 + " на " + num2 + " = " + calculator.multiply(num1, num2);
-        }
+    public String multiply(@RequestParam Integer num1, @RequestParam Integer num2) {
+        return "Умножение чисел " + num1 + " на " + num2 + " = " + calculator.multiply(num1, num2);
     }
 
     @GetMapping(path = "/divide")
-    public String divide(@RequestParam(required = false) Integer num1, @RequestParam(required = false) Integer num2) {
-        if (calculator.thereValue(num1, num2)) {
-            return "Не введено значение!!!";
-        } else {
-            if (num2 != 0) {
-                return "Деление чисел " + num1 + " на " + num2 + " = " + calculator.divide(num1, num2);
-            } else {
-                return "На ноль делить НЕЛЬЗЯ!";
-            }
-        }
+    public String divide(@RequestParam Integer num1, @RequestParam Integer num2) {
+        return "Деление чисел " + num1 + " на " + num2 + " = " + calculator.divide(num1, num2);
     }
 
 }
